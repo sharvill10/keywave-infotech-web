@@ -1,20 +1,17 @@
-// App.js
 import React from 'react';
-import NavBar from './sections/NavBar';
-import Products from './sections/Products';
-import AboutUs from './sections/AboutUs';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
+import NavBar from './pages/NavBar';
 
 
-function App() {
+
+const App = () => {
   return (
-    <div className="font-montserrat">
-      <NavBar />
-      
-        <Products />
-        <AboutUs/>
-      
-    </div>
+    <Router>
+      <NavBar/>
+      <AppRoutes />
+    </Router>
   );
-}
+};
 
 export default App;
