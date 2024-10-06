@@ -10,10 +10,10 @@ const HomeAboutUs = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-5 md:py-10">
+    <section className="bg-gray-900 text-gray-100 py-5 md:py-10">
       <div className="container mx-auto px-4">
         <motion.h1 
-          className="text-2xl md:text-3xl font-bold text-center text-orange-600 mb-8 md:mb-12"
+          className="text-2xl md:text-3xl font-bold text-center text-orange-400 mb-8 md:mb-12"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -24,40 +24,40 @@ const HomeAboutUs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <motion.div 
-            className="bg-white p-6 md:p-8 rounded-lg shadow-lg"
+            className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-orange-600 mb-4 md:mb-6">Our Mission</h2>
-            <p className="text-gray-700 mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-orange-400 mb-4 md:mb-6">Our Mission</h2>
+            <p className="text-gray-300 mb-4">
               We empower Telecom, MSO, CATV, and ISP operators in India with innovative solutions focused on quality, price, and services.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-300">
               Our commitment ensures exceptional customer experiences and continuous improvement.
             </p>
           </motion.div>
 
           <motion.div 
-            className="bg-white p-6 md:p-8 rounded-lg shadow-lg"
+            className="bg-gray-800 p-6 md:p-8 rounded-lg shadow-lg"
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-orange-600 mb-4 md:mb-6">Company Overview</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-orange-400 mb-4 md:mb-6">Company Overview</h2>
             <ul className="space-y-4">
               <li className="flex items-center">
-                <FiCalendar className="text-orange-500 mr-3 flex-shrink-0" />
+                <FiCalendar className="text-orange-400 mr-3 flex-shrink-0" />
                 <span>Founded in March 2024</span>
               </li>
               <li className="flex items-center">
-                <FiMapPin className="text-orange-500 mr-3 flex-shrink-0" />
+                <FiMapPin className="text-orange-400 mr-3 flex-shrink-0" />
                 <span>Headquartered in Vashi, Navi Mumbai</span>
               </li>
               <li className="flex items-center">
-                <FiUsers className="text-orange-500 mr-3 flex-shrink-0" />
+                <FiUsers className="text-orange-400 mr-3 flex-shrink-0" />
                 <span>Led by Mr. Prashant Shetty and Mr. Ravikant Sharma</span>
               </li>
             </ul>
@@ -97,7 +97,7 @@ const HomeAboutUs = () => {
         <div className="mt-8 text-center">
           <Link 
             to="/about" 
-            className="flex items-center justify-center bg-white text-orange-600 py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            className="flex items-center justify-center bg-orange-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-orange-700 transition duration-300"
           >
             <FiArrowRight className="mr-2" />
             <span className="font-semibold">More About Us</span>
@@ -105,7 +105,7 @@ const HomeAboutUs = () => {
         </div>
 
         {/* Copyright Notice */}
-        <div className="mt-10 text-center text-gray-500 text-sm">
+        <div className="mt-10 text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Keywave Infotech. All Rights Reserved.</p>
           <p className="mt-2">Follow us on social media for the latest updates.</p>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import headerLogo from '../assets/images/Keywave-logo.png';
-import { FaBoxOpen, FaCut, FaShieldAlt, FaSitemap, FaTools, FaChevronDown, FaChevronUp, FaBars, FaTimes } from 'react-icons/fa';
+import headerLogo from '../assets/images/Keywave Infotech - Color Logo White Text.png';
+import { FaBoxOpen, FaCut, FaSitemap, FaTools, FaChevronDown, FaChevronUp, FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion'; 
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <motion.li 
         whileHover={{ scale: 1.05 }} 
-        className={`flex items-center text-xl font-bold text-black hover:text-orange-600 transition-colors duration-300 ${mobile ? 'mb-4' : ''}`}
+        className={`flex items-center text-xl font-bold text-white hover:text-orange-600 transition-colors duration-300 ${mobile ? 'mb-4' : ''}`}
       >
         <Link to="/" onClick={() => mobile && setIsMobileMenuOpen(false)}>Home</Link>
       </motion.li>
@@ -43,7 +43,7 @@ const Navbar = () => {
         <motion.button
           onClick={toggleDropdown}
           whileHover={{ scale: 1.05 }}
-          className="flex items-center text-xl font-bold text-black hover:text-orange-600 transition-colors duration-300"
+          className="flex items-center text-xl font-bold text-white hover:text-orange-600 transition-colors duration-300"
         >
           Product
           {isDropdownOpen ? (
@@ -81,13 +81,13 @@ const Navbar = () => {
                         <p className="text-sm text-gray-600">Fusion splicer equipment</p>
                       </Link>
 
-                      <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
+                      {/* <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
                         <div className='flex items-center mb-2'>
                           <FaCut className="text-3xl text-orange-500 mr-2" />
                           <h3 className="text-lg font-semibold text-gray-800">Stripper</h3>
                         </div>
                         <p className="text-sm text-gray-600">Fiber optic stripping tools</p>
-                      </Link>
+                      </Link> */}
 
                       <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
                         <div className='flex items-center mb-2'>
@@ -97,13 +97,13 @@ const Navbar = () => {
                         <p className="text-sm text-gray-600">Precision fiber cleaving tools</p>
                       </Link>
 
-                      <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
+                      {/* <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
                         <div className='flex items-center mb-2'>
                           <FaShieldAlt className="text-3xl text-orange-500 mr-2" />
                           <h3 className="text-lg font-semibold text-gray-800">Protection Sleeve</h3>
                         </div>
                         <p className="text-sm text-gray-600">Fiber protection solutions</p>
-                      </Link>
+                      </Link> */}
 
                       <Link to="/products" className="flex flex-col p-4 rounded-lg hover:bg-orange-100 transition-colors duration-200 text-black hover:text-orange-600">
                         <div className='flex items-center mb-2'>
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       <motion.li 
         whileHover={{ scale: 1.05 }}
-        className={`flex items-center text-xl font-bold text-black hover:text-orange-600 transition-colors duration-300 ${mobile ? 'mb-4' : ''}`}
+        className={`flex items-center text-xl font-bold text-white hover:text-orange-600 transition-colors duration-300 ${mobile ? 'mb-4' : ''}`}
       >
         <Link to="/about" onClick={() => mobile && setIsMobileMenuOpen(false)}>About Us</Link>
       </motion.li>
@@ -136,50 +136,51 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-white text-black p-6 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center">
-          <Link to="/" >
-          <motion.img 
-            src={headerLogo} 
-            alt="Logo" 
-            className="h-16"
-            whileHover={{ scale: 1.1 }} 
-            transition={{ duration: 0.3 }}
-          />
-          </Link>
-        </div>
+    <nav className="bg-gray-900 text-black h-20 p-8 shadow-md">
+  <div className="container mx-auto flex items-center justify-between h-full">
+    <div className="flex items-center">
+      <Link to="/">
+        <motion.img 
+          src={headerLogo} 
+          alt="Logo" 
+          className="h-16"  
+          whileHover={{ scale: 1.1 }} 
+          transition={{ duration: 0.3 }}
+        />
+      </Link>
+    </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-10">
-          <NavLinks />
+    {/* Desktop Menu */}
+    <ul className="hidden md:flex items-center space-x-10">
+      <NavLinks />
+    </ul>
+
+    {/* Mobile Menu Button */}
+    <div className="md:hidden">
+      <button onClick={toggleMobileMenu} className="text-2xl text-white">
+        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  <AnimatePresence>
+    {isMobileMenuOpen && (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden bg-white"
+      >
+        <ul className="flex flex-col items-start p-4">
+          <NavLinks mobile />
         </ul>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</nav>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={toggleMobileMenu} className="text-2xl">
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-white"
-          >
-            <ul className="flex flex-col items-start p-4">
-              <NavLinks mobile />
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
   );
 };
 

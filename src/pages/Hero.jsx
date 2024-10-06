@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HeroBg from '../assets/images/Hero-bg.jpg';
+// import HeroBg from '../assets/images/Hero-bg.jpg'; 
 
 const slides = [
   {
@@ -69,13 +69,13 @@ const Hero = () => {
 
   return (
     <motion.div 
-      className="bg-[#fef4ea]"
+      className="bg-gray-900"
       variants={backgroundVariants}
       initial="initial"
       animate="animate"
     >
       <div className="mx-auto container px-10 ">
-        <div className="flex flex-col md:flex-row min-h-[500px] md:h-[700px] bg-[#fef4ea] text-black relative">
+        <div className="flex flex-col md:flex-row min-h-[500px] md:h-[700px] bg-gray-900 text-orange-400 relative">
           <motion.div 
             className="flex-1 flex items-center justify-center relative overflow-hidden py-8 md:py-0"
             initial={{ opacity: 0 }}
@@ -126,7 +126,7 @@ const Hero = () => {
               </motion.div>
             </AnimatePresence>
           </motion.div>
-          <motion.div 
+          {/* <motion.div 
             className="flex-1 relative h-64 md:h-auto"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 0.9, scale: 1 }}
@@ -139,7 +139,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             />
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Dots Indicator */}
