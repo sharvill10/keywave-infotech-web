@@ -9,7 +9,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-gray-100 py-16">
+    <section className="bg-gray-900 text-gray-100 py-16 min-h-screen">
       <div className="container mx-auto px-4">
         <motion.h1 
           className="text-5xl font-bold text-center text-orange-500 mb-12"

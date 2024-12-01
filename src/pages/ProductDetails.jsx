@@ -53,7 +53,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white mt-16">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
