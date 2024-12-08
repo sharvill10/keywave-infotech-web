@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 import herobg from '../assets/images/Hero-bg.jpg';
+import herobg1 from '../assets/banners/5202423.jpg';
+import herobg2 from '../assets/banners/2817291.jpg';
+import herobg3 from '../assets/banners/7291978.jpg';
 
 const slides = [
   {
@@ -14,21 +17,21 @@ const slides = [
   {
     title: "Precision Fiber Optics",
     description: "Advanced fiber optic solutions providing unparalleled connectivity and performance for modern networks.",
-    image: herobg,
+    image: herobg1,
     gradient: "from-[#111827] to-gray-900/40",
     accent: "bg-gray-700/50"
   },
   {
     title: "Sustainable Technology",
     description: "Committed to eco-friendly solutions that minimize environmental impact while maximizing technological efficiency.",
-    image: herobg,
+    image: herobg2,
     gradient: "from-[#111827] to-gray-900/40",
     accent: "bg-gray-700/50"
   },
   {
     title: "Expert Technical Support",
     description: "15+ years of industry expertise delivering rapid, comprehensive support and innovative technological solutions.",
-    image: herobg,
+    image: herobg3,
     gradient: "from-[#111827] to-gray-900/40",
     accent: "bg-gray-700/50"
   }
@@ -68,8 +71,8 @@ const Hero = () => {
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800 via-transparent to-transparent"></div>
 
       <div className="relative z-10 min-h-screen flex items-center container mx-auto px-6 py-6">
-        {/* Navigation */}
-        <div className="absolute inset-y-0 left-0 z-20 flex items-center">
+        {/* Navigation - Hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute inset-y-0 left-0 z-20  items-center">
           <motion.button
             onClick={prevSlide}
             className="bg-gray-800/20 hover:bg-gray-800/30 backdrop-blur-sm p-3 rounded-full ml-4 border border-gray-800/20"
@@ -80,7 +83,7 @@ const Hero = () => {
           </motion.button>
         </div>
         
-        <div className="absolute inset-y-0 right-0 z-20 flex items-center">
+        <div className="hidden md:block absolute inset-y-0 right-0 z-20 items-center">
           <motion.button
             onClick={nextSlide}
             className="bg-gray-800/20 hover:bg-gray-800/30 backdrop-blur-sm p-3 rounded-full mr-4 border border-gray-800/20"

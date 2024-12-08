@@ -105,10 +105,7 @@ const HomeAboutUs = () => {
         </div>
 
         {/* Copyright Notice */}
-        <div className="mt-10 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Keywave Infotech. All Rights Reserved.</p>
-          <p className="mt-2">Follow us on social media for the latest updates.</p>
-        </div>
+       
       </div>
     </section>
   );

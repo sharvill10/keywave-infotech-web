@@ -1,121 +1,148 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiCalendar, FiUsers, FiAward } from 'react-icons/fi';
+import { FiUsers, FiAward, FiTarget, FiTrendingUp } from 'react-icons/fi';
 
 const AboutUs = () => {
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100
+      }
+    }
   };
 
   return (
-    <section className="bg-gray-900 text-gray-100 py-16 min-h-screen">
-      <div className="container mx-auto px-4">
+    <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100 min-h-screen">
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="container mx-auto px-4 py-16 max-w-6xl"
+      >
         <motion.h1 
-          className="text-5xl font-bold text-center text-orange-500 mb-12"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
+          variants={itemVariants}
+          className="text-5xl font-extrabold text-center text-white mb-16 tracking-tight"
         >
-          About KEYWAVE INFOTECH
+          KEYWAVE INFOTECH
         </motion.h1>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div 
-            className="bg-gray-800 p-8 rounded-lg shadow-lg"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h2 className="text-3xl font-semibold text-orange-500 mb-6">Our Mission</h2>
-            <p className="text-gray-300 mb-6">
-              KEYWAVE INFOTECH is a leading sales and service provider of Optical Fiber Fusion Splicer, OTDR, and other Test & Measurement equipment. We empower Telecom, MSO, CATV, and ISP operators in India with innovative solutions focused on quality, price, and services.
-            </p>
-            <p className="text-gray-300">
-              Our commitment to Compassion, Accountability, Healthy Competition, Personal Growth & Wellness, and Equality ensures exceptional customer experiences and continuous improvement.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="bg-gray-800 p-8 rounded-lg shadow-lg"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h2 className="text-3xl font-semibold text-orange-500 mb-6">Company Overview</h2>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-center">
-                <FiCalendar className="text-orange-400 mr-3 flex-shrink-0" />
-                <span>Founded in March 2024</span>
-              </li>
-              <li className="flex items-center">
-                <FiMapPin className="text-orange-400 mr-3 flex-shrink-0" />
-                <span>Headquartered in Vashi, Navi Mumbai, Maharashtra</span>
-              </li>
-              <li className="flex items-center">
-                <FiUsers className="text-orange-400 mr-3 flex-shrink-0" />
-                <span>Led by Mr. Prashant Shetty and Mr. Ravikant Sharma</span>
-              </li>
-              <li className="flex items-center">
-                <FiAward className="text-orange-400 mr-3 flex-shrink-0" />
-                <span>Distributor of SHINHO Fusion Splicers</span>
-              </li>
-            </ul>
-          </motion.div>
-        </div>
-
         <motion.div 
-          className="mt-12 bg-gray-800 p-8 rounded-lg shadow-lg"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          variants={itemVariants}
+          className="grid md:grid-cols-2 gap-8 mb-12"
         >
-          <h2 className="text-3xl font-semibold text-orange-500 mb-6">Our Partner: SHINHO</h2>
-          <p className="text-gray-300 mb-4">
-            SHINHO is a Chinese company specializing in fiber fusion splicers and optical fiber equipment. With over 15 years of experience, SHINHO is known for:
-          </p>
-          <ul className="list-disc list-inside text-gray-300 mb-4 space-y-2">
-            <li>Advanced functions and stable performance</li>
-            <li>ISO9001:2015 quality management system</li>
-            <li>24-month warranty on products</li>
-            <li>Selling over 10,000 machines annually to more than 50 countries</li>
-            <li>Constant technology upgrades and model improvements</li>
-          </ul>
+          <div className="bg-gray-800 rounded-2xl p-8 shadow-lg">
+            <div className="flex items-center mb-6">
+              <FiTarget className="text-blue-500 text-4xl mr-4" />
+              <h2 className="text-3xl font-bold text-blue-400">Our Mission</h2>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Keywave Infotech specializes in providing top-quality sales and service for optical fiber and telecommunications equipment. We support telecom, cable, and internet service providers with advanced technological solutions that enhance network performance and reliability.
+            </p>
+          </div>
+
+          <div className="bg-gray-800 rounded-2xl p-8 shadow-lg">
+            <div className="flex items-center mb-6">
+              <FiTrendingUp className="text-blue-500 text-4xl mr-4" />
+              <h2 className="text-3xl font-bold text-blue-400">Our Approach</h2>
+            </div>
+            <ul className="space-y-3 text-gray-300">
+              {[
+                "Cutting-edge technological solutions",
+                "Customer-focused service",
+                "Reliable and efficient equipment",
+                "Continuous innovation and support"
+              ].map((value, index) => (
+                <li key={index} className="flex items-center">
+                  <span className="w-3 h-3 bg-blue-500 mr-3 rounded-full"></span>
+                  {value}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
 
         <motion.div 
-          className="mt-12 bg-orange-600 text-white p-8 rounded-lg shadow-lg"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          variants={itemVariants}
+          className="bg-gray-800 rounded-2xl p-8 mb-12 shadow-lg"
         >
-          <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
+          <h2 className="text-3xl font-bold text-blue-400 mb-6 text-center">
+            Our Partner: SHINHO
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <FiMail className="mr-3 flex-shrink-0" />
-                <a href="mailto:keywaveinfotech@gmail.com" className="hover:underline">keywaveinfotech@gmail.com</a>
-              </div>
-              <div className="flex items-center">
-                <FiPhone className="mr-3 flex-shrink-0" />
-                <p>+91 9702233455 / +91 9769449716</p>
-              </div>
+            <div className="text-gray-300">
+              <p className="leading-relaxed mb-4">
+                SHINHO is a leading manufacturer of fiber optic equipment, bringing over 15 years of experience in developing advanced fusion splicer technologies.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <FiAward className="mr-3 text-blue-500" />
+                  ISO9001:2015 Certified
+                </li>
+                <li className="flex items-center">
+                  <FiUsers className="mr-3 text-blue-500" />
+                  Global presence in 50+ countries
+                </li>
+              </ul>
             </div>
-            <div className="flex items-start">
-              <FiMapPin className="mr-3 mt-1 flex-shrink-0" />
+            <div className="bg-gray-900/30 p-6 rounded-lg text-gray-300">
+              <h3 className="text-xl font-semibold text-blue-400 mb-4">
+                Key Achievements
+              </h3>
+              <ul className="space-y-2">
+                <li>Over 10,000 machines produced annually</li>
+                <li>24-month product warranty</li>
+                <li>Continuous technological improvement</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          variants={itemVariants}
+          className="bg-gray-800 rounded-2xl p-8 shadow-lg"
+        >
+          <h2 className="text-3xl font-bold mb-6 text-white text-center">
+            Contact Information
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-gray-300 text-center">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-blue-400">Get in Touch</h3>
+              <p>Email: keywaveinfotech@gmail.com</p>
+              <p>Phone: +91 9702233455 / +91 9769449716</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-blue-400 mb-2">
+                Our Location
+              </h3>
               <p>
-                S154, 2nd Floor, Plot No.47, Fantasia Business Park,<br />
-                Sector-30/A, Vashi, Navi Mumbai – 400703.
+                S154, 2nd Floor, Fantasia Business Park,
+                Sector-30/A, Vashi, Navi Mumbai – 400703
               </p>
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

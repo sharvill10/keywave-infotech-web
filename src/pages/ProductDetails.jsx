@@ -37,7 +37,7 @@ const ProductDetails = () => {
     );
   }
 
-  const images = [product.image, ...Array(3).fill(product.image)]; // Simulated multiple images
+  const images = [product.image, ...Array(3).fill(product.image)]; 
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
